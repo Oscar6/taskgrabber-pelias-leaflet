@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import Map from '../src/components/Map';
+import Search from '../src/components/Search';
+// import StoresApi from './components/StoresApi';
 
 const AppWrapper = styled.div `
   display: flex;
@@ -25,6 +27,8 @@ class App extends Component {
     return (
       <AppWrapper>
         <Container>
+          {/* <StoresApi /> */}
+          <Search />
           <Map />
         </Container>
       </AppWrapper>
