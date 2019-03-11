@@ -1,45 +1,20 @@
 import React from 'react';
 import { Button, Form, Col, Row, Container } from 'react-bootstrap';
-// import Search from './Search';
-import DropDown from './DropDown';
-import axios from 'axios';
+import Search from './Search';
 
-class OrderForm extends React.Component {
+class ReviewForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            stores: [],
-            selectedStore: ""
-        };
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        console.log(this.state.selectedStore)
-        alert("Is this store correct?: " + this.state.selectedStore);
-      }
-
-    componentDidMount() {
-        axios.get(`stores.json`)
-           .then(({data}) => { 
-                console.log(data)
-                this.setState({
-                    stores: data.stores
-                });
-           })
-            .catch(error => console.log(error.response));
-      }
-      
     render() {
         return (
-            <Container className="orderForm">
-                <Form onSubmit={this.handleSubmit}>
+            <Container className="reviewForm">
+                <Form>
 
-                    <Form.Group className="formGridStore">
-                        <DropDown stores={this.state.stores} />
-                    </Form.Group>
+                    <Form.Label>Store</Form.Label>
+                    <Search />
 
                     <Form.Group className="formGridStore">
                         <Form.Label>Password</Form.Label>
@@ -65,7 +40,7 @@ class OrderForm extends React.Component {
                         <Form.Group as={Col} className="formGridStore">
                             <Form.Label>State</Form.Label>
                             <Form.Control as="select">
-                                <option>Select...</option>
+                                <option>Choose...</option>
                                 <option>Texas</option>
                             </Form.Control>
                         </Form.Group>
@@ -76,8 +51,8 @@ class OrderForm extends React.Component {
                         </Form.Group>
                     </Form.Row>
 
-                    <Button variant="primary" type="submit" className="orderButton">
-                        Submit Order
+                    <Button variant="primary" type="submit" className="reviewButton">
+                        Submit
                     </Button>
 
                 </Form>
@@ -86,4 +61,4 @@ class OrderForm extends React.Component {
     }
 }
 
-export default OrderForm;
+export default ReviewForm;
