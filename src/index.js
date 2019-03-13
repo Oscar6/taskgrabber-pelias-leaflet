@@ -9,13 +9,12 @@ import './Styles/styles.css'
 //component imports
 import App from './App';
 import ClientPage from './components/ClientPage';
-import Register from './Register/Register'
-import Dashboard from './Dashboard/Dashboard'
-import UserDashboard from './Dashboard/UserDashboard'
-import DropDown from './components/DropDown';
-// import OrderForm from './components/OrderForm';
+import Register from './Register/Register';
+import Dashboard from './Dashboard/Dashboard';
+import UserDashboard from './Dashboard/UserDashboard';
+import About from './components/About';
+import FAQ from './components/FAQ';
 import './Styles/App.css';
-// import TestComponent from './components/TestComponent';
 
 
 // const store = createStore(reducer);
@@ -33,7 +32,8 @@ ReactDOM.render(
           <Route path="/register" component={ Register } />
           <Route path="/dashboard" component={ Dashboard } />
           <Route path="/userdashboard" component={ UserDashboard } />
-          <Route path="/dropdown" component={ DropDown } />
+          <Route path="/about" component={ About } />
+          <Route path="/faq" component={ FAQ } />
         </Switch>
         </BaseLayout>
         </BrowserRouter>,
