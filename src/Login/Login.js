@@ -18,7 +18,6 @@ import GoogleLogin from "react-google-login";
 import Facebook from '../components/Facebook'
 import { Formik } from "formik";
 import axios from "axios";
-// import {AuthConsumer} from '../auth/AuthContext';
 
 class Login extends Component {
   constructor(props) {
@@ -42,7 +41,7 @@ class Login extends Component {
           password: ''
         }}
         onSubmit={(values)=>{
-          // console.log(values)
+          console.log(values)
           axios.post('/signin', values)
           .then(res=>{
               if(res.data.token){
@@ -142,9 +141,9 @@ class Login extends Component {
                     <div>
                       <h2>Sign Up</h2>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua.
+                        Welcome to Mule we are an on-demand item return service.
+                        Create an account for all your return needs.
+                        
                       </p>
                       <Link to="/register">
                         <Button

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+// import {Redirect} from 'react-router'
+import { Button, Card, CardBody, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import Collapse from 'react-bootstrap/Collapse'
 import {Formik} from 'formik';
 import axios from 'axios';
@@ -23,16 +24,6 @@ class Register extends Component {
       open: false,
       isLoggedin: false
     };
-    this.routeChange = this.routeChange.bind(this)
-  }
-
-  routeChange(){
-    if(!this.state.open){
-      this.props.history.push('/Dashboard')
-    }
-    else if(this.state.open){
-      this.props.history.push('/userdashboard')
-    }
   }
   
   render() {
@@ -63,7 +54,18 @@ class Register extends Component {
           if(values.password === !values.confirm){
             alert("Password does not match")
           }
+          
+          //sends data to server
           axios.post('/signup', values)
+
+          //redirects you to driver dashboard or client dashboard based on register
+          if(!this.state.open){
+            this.props.history.push('/userDashboard')
+          }
+          else if(this.state.open){
+            this.props.history.push('/Dashboard')
+          }
+
           
           }}
         >
@@ -192,7 +194,7 @@ class Register extends Component {
                         </InputGroup>
                       </div>
                     </Collapse>
-                    <Button color="success" onClick={this.routeChange} block>Create Account</Button>
+                    <Button color="success" block>Create Account</Button>
                   </Form>
                 </CardBody>
               </Card>
