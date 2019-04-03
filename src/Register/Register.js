@@ -133,7 +133,6 @@ class Register extends Component {
                       </InputGroupAddon>
                       <Input name="confirm" type="password" onChange={handleChange} value={values.confirm} placeholder="Confirm Password" autoComplete="new-password" />
                     </InputGroup>
-                    {/* Button below controls collapse for driver registration  */}
                     <Button
                       onClick={() => this.setState({ open: !open })}
                       aria-controls="example-collapse-text"

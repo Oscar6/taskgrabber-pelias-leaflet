@@ -1,9 +1,6 @@
 import React from 'react';
 import { Button, Form, Container } from 'react-bootstrap';
-// import {  Card, CardBody } from 'reactstrap';
-// import Search from './Search';
 import DropDown from './DropDown';
-// import Map from './Map';
 import axios from 'axios';
 
 class OrderForm extends React.Component {

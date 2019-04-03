@@ -5,9 +5,6 @@ import {Link} from 'react-router-dom';
 import '../Styles/opacity.css';
 
 class About extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   render() {
     return (
