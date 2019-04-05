@@ -1,6 +1,5 @@
 // import React from 'react';
 // import { Button, Form, Col, Row, Container } from 'react-bootstrap';
-// import Search from './Search';
 
 // class ReviewForm extends React.Component {
 
@@ -10,7 +9,6 @@
 //                 <Form>
 
 //                     <Form.Label>Store</Form.Label>
-//                     <Search />
 
 //                     <Form.Group className="formGridStore">
 //                         <Form.Label>Password</Form.Label>
