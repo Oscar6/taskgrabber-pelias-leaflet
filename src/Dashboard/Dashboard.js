@@ -671,7 +671,7 @@ class Dashboard extends Component {
                         <tr>
                           <td className="text-center">
                             <div className="avatar">
-                            <strong>Ye West</strong>
+                            <strong>James Harden</strong>
                             </div>
                           </td>
                           <td>
